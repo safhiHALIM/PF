@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="blogs" class="container p-5">
+        <h2 class="text-center">Blogs</h2>
+        <div id="articlesList" class="row">
+            <!-- Les articles seront ajoutés ici -->
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const articlesList = document.getElementById('articlesList');
+        const articles = JSON.parse(localStorage.getItem('articles')) || [];
+
+        articlesList.innerHTML = ''; // Nettoyez la liste avant de la remplir
+
+        articles.forEach(article => {
+            if (article.isValidated) {
+                const articleDiv = document.createElement('div');
+                articleDiv.classList.add('col-md-6');
+                articleDiv.innerHTML = `
+                    <div class="card mb-4">
+                        ${article.video ? `<div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="${article.video}" allowfullscreen></iframe>
+                                            </div>` : ''}
+                        ${article.image ? `<img src="${article.image}" class="card-img-top" alt="Article Image">` : ''}
+                        <div class="card-body">
+                            <h5 class="card-title">${article.title}</h5>
+                            <p class="card-text">${article.content}</p>
+                        </div>
+                    </div>
+                `;
+                articlesList.appendChild(articleDiv);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

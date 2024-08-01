@@ -1,0 +1,65 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #2980B9;
+    --accent-color: #27AE60;
+    --background-color: #ECF0F1;
+    --text-color: #2D2D2D;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--accent-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+section {
+    padding: 60px 0;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px 0;
+}
+
+#home {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+#about {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#services {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+#contact {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

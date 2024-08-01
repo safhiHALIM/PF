@@ -1,0 +1,11 @@
+{
+  "name": "portefolioo",
+  "version": "1.0.0",
+  "description": "simple portefolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "",
+  "license": "ISC"
+}
